@@ -2,6 +2,15 @@
 
 replicaCount: 2
 
+# Set the minimum available value for the Pod Disruption Budget
+# May be a percentage or absolute number
+# https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
+minAvailable: 1
+
+# Alternatively you may specify maxUnavailable
+# Please note if you set both only minAvailable will take effect as the spec only supports setting one
+# maxUnavailable: 1
+
 # akeylessStrictMode need to be enabled when using Redhat Openshift
 akeylessStrictMode: false
 initContainer:
