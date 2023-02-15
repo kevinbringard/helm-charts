@@ -9,7 +9,7 @@ metadata:
   name: {{ include "akeyless-api-gw.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "akeyless-api-gw.labels" . | nindent 4 }}
+  {{- include "akeyless-api-gw.labels" . | nindent 4 }}
   {{- if .Values.service.labels }}
   {{- toYaml .Values.service.labels | nindent 4 }}
   {{- end }}
@@ -22,5 +22,5 @@ spec:
   maxUnavailable: {{ .Values.maxUnavailable }}
   {{- end }}
   selector:
-    { { - include "akeyless-api-gw.selectorLabels" . | nindent 4 } }
-  {{- end }}
+    {{- include "akeyless-api-gw.selectorLabels" . | nindent 4 }}
+{{- end }}
